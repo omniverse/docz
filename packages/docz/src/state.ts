@@ -73,7 +73,7 @@ export interface State {
 export const state = createState({
   config: {},
   entries: {},
-  metadata: {}
+  metadata: {},
 })
 
 export const metadataSelector = state.createSelector((s: State) => s.metadata)

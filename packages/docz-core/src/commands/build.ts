@@ -23,7 +23,6 @@ export const build = async (args: Config) => {
   try {
     await Entries.writeApp(config)
     await dataServer.init()
-    return
     await run('onPreBuild', config)
     await bundler.build(await bundler.getConfig(env))
     await run('onPostBuild', config)
