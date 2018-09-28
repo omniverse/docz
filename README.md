@@ -14,7 +14,7 @@
 <p align="center">
   <img src="https://badgen.net/npm/v/docz" alt="">
   <img src="https://badgen.net/badge/license/MIT/blue" alt="">
-  <img src="https://badgen.net/npm/dt/express" alt="">
+  <img src="https://badgen.net/npm/dt/docz" alt="">
   <a href="https://discord.gg/YQE4MbD">
     <img src="https://img.shields.io/badge/chat-on%20discord-7289da.svg" alt="Chat">
   </a>
@@ -22,7 +22,6 @@
     <img src="https://img.shields.io/badge/check-our%20roadmap-5362F5.svg" alt="Chat">
   </a>
 </p>
-
 
 <p align="center">
   <a href="http://docz.site" target="_blank">
@@ -84,7 +83,6 @@ Documenting our things is one of the most important and heavy processes when you
 - **[babel6](https://github.com/pedronauck/docz/blob/master/packages/docz-plugin-babel6)** - Use this plugin to use older babel version **[DEPRECATED]** ⚠️
 - **[netlify](https://github.com/nicholasess/docz-plugin-netlify)** - Deploy your documentation to [Netlify](http://netlify.com/)
 - **[react-native](https://github.com/pedronauck/docz-plugin-react-native)** - Allow you to use docz with React Native
-- **[svgr](https://github.com/pedronauck/docz-plugin-svgr)** - Allow you to parse svg using svgr
 
 ## 🗃 &nbsp; Examples
 
@@ -98,6 +96,15 @@ Documenting our things is one of the most important and heavy processes when you
 - **[with postcss](https://github.com/pedronauck/docz-plugin-css/tree/master/examples/css-postcss)** - Using docz parsing css with PostCSS
 - **[with stylus](https://github.com/pedronauck/docz-plugin-css/tree/master/examples/css-stylus)** - Using docz parsing css with Stylus
 
+## 🌍 &nbsp; Around the world
+
+- **[React Spring](http://react-spring.surge.sh/)** - Helping react-motion and animated to become best friends
+- **[Smooth UI](https://smooth-ui.smooth-code.com/)** - Modern React UI library
+- **[Set Protocol Docs](https://docs.setprotocol.com/)** - Documentation site of Set Protocal
+- **[Circuit UI](https://circuit.sumup.com/#/)** - React component library for [SumUp](https://sumup.com) web apps
+- **[React Pixi](https://reactpixi.org/#/)** - React Fiber renderer for Pixi
+- **[React Hotkey Tooltip](https://react-hotkey-tooltip.netlify.com/#/)** - A global Hotkey provider with built in tooltip for React
+- **[Sajari React SDK](https://sajari-sdk-react.netlify.com/)** - Library of React Components for the Sajari
 
 ## 🚧 &nbsp; Warning!
 
@@ -165,6 +172,6 @@ If you need some help you can chat with us on [our Discord server](https://disco
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore -->
-| [<img src="https://avatars3.githubusercontent.com/u/2029172?v=4" width="60px;"/><br /><sub><b>Pedro Nauck</b></sub>](https://github.com/pedronauck)<br />[💻](https://github.com/pedronauck/docz/commits?author=pedronauck "Code") [📖](https://github.com/pedronauck/docz/commits?author=pedronauck "Documentation") [🐛](https://github.com/pedronauck/docz/issues?q=author%3Apedronauck "Bug reports") [👀](#review-pedronauck "Reviewed Pull Requests") | [<img src="https://avatars3.githubusercontent.com/u/5435657?v=4" width="60px;"/><br /><sub><b>Marcelo Formentão</b></sub>](https://github.com/marceloavf)<br />[💻](https://github.com/pedronauck/docz/commits?author=marceloavf "Code") [📖](https://github.com/pedronauck/docz/commits?author=marceloavf "Documentation") [🐛](https://github.com/pedronauck/docz/issues?q=author%3Amarceloavf "Bug reports") | [<img src="https://avatars0.githubusercontent.com/u/3238901?s=460&v=4" width="60px;"/><br /><sub><b>Nicholas Eduardo</b></sub>](https://github.com/nicholasess)<br />[💻](https://github.com/pedronauck/docz/commits?author=nicholasess "Code") [📖](https://github.com/pedronauck/docz/commits?author=nicholasess "Documentation") [🐛](https://github.com/pedronauck/docz/issues?q=author%3Anicholasess "Bug reports") | [<img src="https://avatars2.githubusercontent.com/u/3277185?v=4" width="60px;"/><br /><sub><b>Renato Ribeiro</b></sub>](http://twitter.com/renatorib_)<br />[💻](https://github.com/pedronauck/docz/commits?author=renatorib "Code") [📖](https://github.com/pedronauck/docz/commits?author=renatorib "Documentation") [🐛](https://github.com/pedronauck/docz/issues?q=author%3Arenatorib "Bug reports") | [<img src="https://avatars0.githubusercontent.com/u/13947203?v=4" width="60px;"/><br /><sub><b>Guilherme Jabur</b></sub>](https://github.com/jaburcodes)<br />[💻](https://github.com/pedronauck/docz/commits?author=jaburcodes "Code") [📖](https://github.com/pedronauck/docz/commits?author=jaburcodes "Documentation") [🐛](https://github.com/pedronauck/docz/issues?q=author%3Ajaburcodes "Bug reports") |
-| :---: | :---: | :---: | :---: | :---: |
+| [<img src="https://avatars3.githubusercontent.com/u/2029172?v=4" width="60px;"/><br /><sub><b>Pedro Nauck</b></sub>](https://github.com/pedronauck)<br />[💻](https://github.com/pedronauck/docz/commits?author=pedronauck "Code") [📖](https://github.com/pedronauck/docz/commits?author=pedronauck "Documentation") [🐛](https://github.com/pedronauck/docz/issues?q=author%3Apedronauck "Bug reports") [👀](#review-pedronauck "Reviewed Pull Requests") | [<img src="https://avatars0.githubusercontent.com/u/3238901?s=460&v=4" width="60px;"/><br /><sub><b>Nicholas Eduardo</b></sub>](https://github.com/nicholasess)<br />[💻](https://github.com/pedronauck/docz/commits?author=nicholasess "Code") [📖](https://github.com/pedronauck/docz/commits?author=nicholasess "Documentation") [🐛](https://github.com/pedronauck/docz/issues?q=author%3Anicholasess "Bug reports") | [<img src="https://avatars1.githubusercontent.com/u/2096216?s=460&v=4" width="60px;"/><br /><sub><b>Marcelo Piva</b></sub>](https://github.com/mpivaa)<br />[💻](https://github.com/pedronauck/docz/commits?author=mpivaa "Code") [📖](https://github.com/pedronauck/docz/commits?author=mpivaa "Documentation") [🐛](https://github.com/pedronauck/docz/issues?q=author%3Ampivaa "Bug reports") | [<img src="https://avatars0.githubusercontent.com/u/13947203?v=4" width="60px;"/><br /><sub><b>Guilherme Jabur</b></sub>](https://github.com/jaburcodes)<br />[💻](https://github.com/pedronauck/docz/commits?author=jaburcodes "Code") [📖](https://github.com/pedronauck/docz/commits?author=jaburcodes "Documentation") [🐛](https://github.com/pedronauck/docz/issues?q=author%3Ajaburcodes "Bug reports") |
+| :---: | :---: | :---: | :---: |
 <!-- ALL-CONTRIBUTORS-LIST:END -->

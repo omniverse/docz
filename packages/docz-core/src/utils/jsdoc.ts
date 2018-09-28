@@ -1,5 +1,4 @@
 // @ts-ignore
-import parser from 'jsdoc3-parser'
 import glob from 'fast-glob'
 import * as path from 'path'
 import { Config } from '../commands/args'
@@ -22,7 +21,6 @@ interface ASTParam {
   defaultValue?: any
   description?: string
 }
-
 
 interface ASTReturns {
   name: string
@@ -59,12 +57,12 @@ async function findSourceFiles(config: Config): Promise<string[]> {
   })
 }
 
-export async function parseSourceFiles(config: Config): Promise<JSDocAST>  {
+export async function parseSourceFiles(config: Config): Promise<JSDocAST> {
   const files = await findSourceFiles(config)
 
-  const promises = files.map(async (file) => {
+  const promises = files.map(async file => {
     return new Promise<JSDocAST>((resolve, reject) => {
-      return parser(file, (error: string | null, ast: JSDocAST) => resolve(ast))
+      return [] // FIXME:
     })
   })
 

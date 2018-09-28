@@ -34,13 +34,24 @@ export interface ThemeConfig {
   [key: string]: any
 }
 
+export interface MenuItem {
+  id: string
+  name: string
+  route?: string
+  href?: string
+  menu?: MenuItem[]
+  order?: number
+}
+
 export interface Config {
   title: string
   description: string
   ordering: string
   themeConfig: ThemeConfig
+  menu: MenuItem[]
   version: string | null
   repository: string | null
+  native: boolean
 }
 
 export interface Metadata {

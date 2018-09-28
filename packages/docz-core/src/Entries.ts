@@ -1,5 +1,6 @@
 import * as path from 'path'
 import * as fs from 'fs-extra'
+import { parseMdx } from 'docz-utils/lib/mdast'
 import glob from 'fast-glob'
 
 import * as paths from './config/paths'
@@ -9,17 +10,18 @@ import { mapToObj } from './utils/helpers'
 import { Entry, EntryObj } from './Entry'
 import { Plugin } from './Plugin'
 import { Config } from './commands/args'
-import { parseMdx } from './utils/ast'
 import { getRepoEditUrl } from './utils/repo-info'
 
 const DEFAULT_IGNORE = [
-  '!**/node_modules/**',
   'readme.md',
   'changelog.md',
   'code_of_conduct.md',
   'contributing.md',
   'license.md',
 ]
+
+const ignoreFiles = (arr: string[]) =>
+  ['!**/node_modules/**'].concat(arr.length > 0 ? arr : DEFAULT_IGNORE)
 
 export const fromTemplates = (file: string) => path.join(paths.templates, file)
 
@@ -83,7 +85,7 @@ export class Entries {
     const toMatch = matchFilesWithSrc(config)
 
     const files = await glob<string>(toMatch(arr), {
-      ignore: DEFAULT_IGNORE.concat(ignore),
+      ignore: ignoreFiles(ignore),
       onlyFiles: true,
       unique: true,
       nocase: true,
@@ -91,23 +93,29 @@ export class Entries {
     })
 
     const createEntry = async (file: string) => {
-      const ast = await parseMdx(file)
-      const entry = new Entry(ast, file, src)
+      try {
+        const ast = await parseMdx(file)
+        const entry = new Entry(ast, file, src)
 
-      if (this.repoEditUrl) entry.setLink(this.repoEditUrl)
-      const { settings, ...rest } = entry
+        if (this.repoEditUrl) entry.setLink(this.repoEditUrl)
+        const { settings, ...rest } = entry
 
-      return {
-        ...settings,
-        ...rest,
+        return {
+          ...settings,
+          ...rest,
+        }
+      } catch (err) {
+        return null
       }
     }
 
     const map = new Map()
-    const entries = await Promise.all(files.map(createEntry))
+    const entries = await Promise.all(files.map(createEntry).filter(Boolean))
 
     for (const entry of entries) {
-      map.set(entry.filepath, entry)
+      if (entry) {
+        map.set(entry.filepath, entry)
+      }
     }
 
     this.all = map

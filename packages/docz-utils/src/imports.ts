@@ -1,4 +1,5 @@
 import * as parser from '@babel/parser'
+import * as generator from '@babel/generator'
 import traverse from '@babel/traverse'
 import get from 'lodash.get'
 
@@ -7,27 +8,32 @@ const fromSpecifiers = (specifiers: any = []) =>
     ? specifiers.map(specifier => get(specifier, 'local.name'))
     : []
 
-export const importsFromEntry = (node: any) => {
+const traverseOnImports = (fn: (path: any) => any[]) => (node: any) => {
   try {
     const ast = parser.parse(node.value, { sourceType: 'module' })
-    const imports: any[] = []
+    let populated: any[] = []
 
     traverse(ast, {
       enter(path: any): void {
         if (path.isImportDeclaration()) {
-          const sourceValue = get(path, 'node.source.value')
-
-          if (sourceValue !== 'docz') {
-            imports.push(...fromSpecifiers(path.node.specifiers))
+          if (get(path, 'node.source.value') !== 'docz') {
+            populated = populated.concat(fn(path))
           }
-
           return
         }
       },
     })
 
-    return imports
+    return populated
   } catch (err) {
     return []
   }
 }
+
+export const getFullImports = traverseOnImports((path: any) => [
+  get(generator.default(path.node), 'code'),
+])
+
+export const getImportsVariables = traverseOnImports((path: any) =>
+  fromSpecifiers(path.node.specifiers)
+)

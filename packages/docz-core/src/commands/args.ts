@@ -24,6 +24,13 @@ const getInitialDescription = (pkg: any): string =>
 export type Env = 'production' | 'development'
 export type ThemeConfig = Record<string, any>
 
+export interface Menu {
+  name: string
+  route?: string
+  href?: string
+  menu?: Menu[]
+}
+
 export interface HtmlContext {
   lang: string
   favicon?: string
@@ -47,6 +54,7 @@ export interface Argv {
   ignore: string[]
   dest: string
   editBranch: string
+  config: string
   /* bundler args */
   debug: boolean
   typescript: boolean
@@ -57,10 +65,15 @@ export interface Argv {
   websocketHost: string
   hotPort: number
   hotHost: string
+  native: boolean
   /* template args */
   title: string
   description: string
   theme: string
+  /**
+   * @deprecated since the new ordering using menu on config file
+   * this property will be deleted in the v1.0
+   */
   ordering: 'ascending' | 'descending'
   wrapper?: string
   indexHtml?: string
@@ -74,6 +87,7 @@ export interface Config extends Argv {
   hastPlugins: any[]
   themeConfig: ThemeConfig
   htmlContext: HtmlContext
+  menu: Menu[]
   modifyBundlerConfig<C>(config: C, dev: boolean, args: Config): C
   modifyBabelRc(babelrc: BabelRC, args: Config): BabelRC
 }
@@ -109,7 +123,10 @@ export const args = (env: Env) => (yargs: any) => {
     type: 'string',
     default: getEnv('docz.edit.branch', 'master'),
   })
-
+  yargs.positional('config', {
+    type: 'string',
+    default: getEnv('docz.config', ''),
+  })
   yargs.positional('title', {
     type: 'string',
     default: getEnv('docz.title', getInitialTitle(pkg)),
@@ -171,5 +188,9 @@ export const args = (env: Env) => (yargs: any) => {
   yargs.positional('websocketPort', {
     type: 'number',
     default: getEnv('docz.websocket.port', 60505),
+  })
+  yargs.positional('native', {
+    type: 'boolean',
+    default: getEnv('docz.native', false),
   })
 }

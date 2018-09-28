@@ -1,9 +1,9 @@
 import { injectGlobal } from 'emotion'
+import 'normalize.css'
+import 'codemirror/lib/codemirror.css'
 
 // tslint:disable
 injectGlobal`
-  @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css');
-
   *, *:before, *:after {
     box-sizing: border-box;
   }
@@ -15,11 +15,14 @@ injectGlobal`
   body {
     margin: 0;
     padding: 0;
+  }
+
+  .with-overlay {
     overflow: hidden;
   }
 
   html, body, #root {
-    height: 100vh;
-    min-height: 100vh;
+    height: 100%;
+    min-height: 100%;
   }
 `

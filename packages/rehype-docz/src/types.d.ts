@@ -1,6 +1,2 @@
-declare module 'unist-util-is'
 declare module 'hast-util-to-string'
-declare module 'strip-indent'
-declare module 'signale'
-declare module '@babel/parser'
-declare module '@babel/traverse'
+declare module 'unist-util-is'
