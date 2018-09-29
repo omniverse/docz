@@ -2612,11 +2612,9 @@ babel-plugin-docz@mpivaa/babel-plugin-docz:
   version "1.0.0"
   resolved "https://codeload.github.com/mpivaa/babel-plugin-docz/tar.gz/4bfce4982de5099e0b385aa16f8fd2eb86a0d82f"
   dependencies:
-    "@babel/cli" "^7.1.2"
     "@babel/core" "^7.1.0"
     "@babel/preset-env" "^7.1.0"
     babel-core "7.0.0-bridge.0"
-    babel-generator "^6.26.1"
     babel-jest "^23.6.0"
     babel-literal-to-ast "^2.0.0"
     babel-template "^6.26.0"
@@ -3392,6 +3390,10 @@ charenc@~0.0.1:
 check-types@^7.3.0:
   version "7.4.0"
   resolved "https://registry.npmjs.org/check-types/-/check-types-7.4.0.tgz#0378ec1b9616ec71f774931a3c6516fad8c152f4"
+
+child_process@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/child_process/-/child_process-1.0.2.tgz#b1f7e7fc73d25e7fd1d455adc94e143830182b5a"
 
 chokidar@^1.6.0:
   version "1.7.0"

@@ -1,6 +1,6 @@
 import { ComponentType as CT } from 'react'
 import createState from 'react-copy-write'
-import { AnnotationsAST } from './components/Annotations'
+import { AnnotationsMap } from './components/Annotations'
 import { ComponentsMap } from './components/DocPreview'
 
 export type MSXComponent = CT<{
@@ -55,7 +55,7 @@ export interface Config {
 }
 
 export interface Metadata {
-  annotations?: AnnotationsAST
+  annotations?: AnnotationsMap
 }
 
 type Import = () => Promise<MSXImport>
