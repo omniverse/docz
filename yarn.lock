@@ -2608,19 +2608,6 @@ babel-messages@^6.23.0:
   dependencies:
     babel-runtime "^6.22.0"
 
-babel-plugin-docz@mpivaa/babel-plugin-docz:
-  version "1.0.0"
-  resolved "https://codeload.github.com/mpivaa/babel-plugin-docz/tar.gz/4bfce4982de5099e0b385aa16f8fd2eb86a0d82f"
-  dependencies:
-    "@babel/core" "^7.1.0"
-    "@babel/preset-env" "^7.1.0"
-    babel-core "7.0.0-bridge.0"
-    babel-jest "^23.6.0"
-    babel-literal-to-ast "^2.0.0"
-    babel-template "^6.26.0"
-    jest "^23.6.0"
-    jsdoc "^3.5.5"
-
 babel-plugin-emotion@^9.2.10, babel-plugin-emotion@^9.2.9:
   version "9.2.10"
   resolved "https://registry.npmjs.org/babel-plugin-emotion/-/babel-plugin-emotion-9.2.10.tgz#983c288106cece7ce761df0513683ef0d241c466"

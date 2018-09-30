@@ -1,5 +1,3 @@
-// @ts-ignore
-import glob from 'fast-glob'
 import * as path from 'path'
 import { Config } from '../commands/args'
 import * as paths from '../config/paths'
@@ -77,9 +75,9 @@ function findImports(code: string): RegExpMatchArray {
 function resolveModule(module: string, relativePath: string): string | null {
   const lookups = [
     `${module}.js`,
+    `${module}.ts`,
     `${module}.jsx`,
     `${module}.mjs`,
-    `${module}.ts`,
     `${module}.tsx`,
     `${module}/index.js`,
     `${module}/index.ts`,
