@@ -45,11 +45,9 @@ export const state = (config: Config): State => {
     persistent: true,
   })
 
-  const handleClose = () => watcher.close()
-
   return {
     init: updateConfig(config),
-    close: handleClose,
+    close: watcher.close,
     update: async params => {
       const update = updateConfig(config)
       const fn = async () => update(params)
@@ -58,7 +56,7 @@ export const state = (config: Config): State => {
       watcher.on('change', fn)
       watcher.on('unlink', fn)
 
-      return handleClose
+      return watcher.close
     },
   }
 }
